@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Comapny Portal</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!--===============================================================================================-->
+</head>
+<style>
+	body,
+	html {
+		height: 100%;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.bg-image {
+		/* The image used */
+		background-image: url("./images/responsible-AI.jpg");
+
+		/* Add the blur effect */
+		/* filter: blur(8px);
+		-webkit-filter: blur(2px); */
+
+		/* Full height */
+		height: 100%;
+
+		/* Center and scale the image nicely */
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover; 
+	}
+</style>
+
+<body>
+	<div class="bg-image"></div>
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script>
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+	<!--===============================================================================================-->
+	<!-- <script src="js/main.js"></script> -->
+	<script>
+
+		async function preReceiveHandler(event) {
+			console.log("event data", event)
+
+		}
+		window.watsonAssistantChatOptions = {
+			integrationID: "9d48de7f-6052-4e7b-9b8e-1391d20bd868", // The ID of this integration.
+			//integrationID : "7b51398c-ee44-42be-82a1-fb69ada84cd9",
+			region: "us-south", // The region your integration is hosted in.
+			serviceInstanceID: "289e70fc-f3ad-48e6-93d5-c33a0aca1793", // The ID of your service instance.
+			onLoad: function (instance) {
+				instance.on({ type: "receive", handler: preReceiveHandler });
+
+				document
+
+					.addEventListener("click", function () {
+
+					});
+
+				instance.render();
+			},
+		};
+		setTimeout(function () {
+			const t = document.createElement("script");
+			t.src =
+				"https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+				(window.watsonAssistantChatOptions.clientVersion || "latest") +
+				"/WatsonAssistantChatEntry.js";
+			document.head.appendChild(t);
+			sessionStorage.clear();
+		});
+
+		$(document).ready(function () {
+			// your code
+			setTimeout(() => {
+				var submit = document.getElementById("WACLauncher__Button");
+				submit.click();
+			}, 2000);
+
+		});
+	</script>
+</body>
+
+</html>
